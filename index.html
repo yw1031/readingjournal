@@ -1,47 +1,27 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>학급 독서기록장</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-  <div id="login-container">
-    <h2>📚 학급 독서기록장</h2>
-    <input type="text" id="student-name" placeholder="이름" />
-    <input type="password" id="student-password" placeholder="비밀번호" />
-    <button onclick="login()">로그인</button>
+  <!-- 회원가입 화면 -->
+  <div id="signup-container">
+    <h2>📚 학급 독서기록장 회원가입</h2>
+    <input type="text" id="student-id" placeholder="학번 (예: 2023001)" />
+    <input type="text" id="student-name-signup" placeholder="이름" />
+    <input type="password" id="student-password-signup" placeholder="비밀번호" />
+    <button onclick="signup()">회원가입</button>
+    <p>이미 회원이신가요? <a href="#" onclick="showLogin()">로그인하기</a></p>
   </div>
 
-  <div id="app-container" style="display: none;">
-    <header>
-      <h2 id="welcome-message"></h2>
-      <button onclick="logout()">로그아웃</button>
-    </header>
+  <!-- 로그인 화면 -->
+  <div id="login-container" style="display:none;">
+    <h2>📚 학급 독서기록장 로그인</h2>
+    <input type="text" id="student-id-login" placeholder="학번" />
+    <input type="password" id="student-password-login" placeholder="비밀번호" />
+    <button onclick="login()">로그인</button>
+    <p>처음이신가요? <a href="#" onclick="showSignup()">회원가입하기</a></p>
+  </div>
 
-    <section id="book-form">
-      <h3>📖 책 기록하기</h3>
-      <input type="text" id="book-title" placeholder="책 제목" />
-      <input type="text" id="book-author" placeholder="저자" />
-      <input type="date" id="book-date" />
-      <textarea id="book-review" placeholder="감상평"></textarea>
-      <button onclick="addBook()">등록</button>
-    </section>
-
-    <section id="book-list">
-      <h3>📚 나의 독서 목록</h3>
-      <ul id="book-items"></ul>
-    </section>
-
-    <section id="stats">
-      <h3>📊 통계</h3>
-      <p>총 읽은 책 수: <span id="book-count">0</span>권</p>
-      <h4>🏆 가장 많이 읽은 사람</h4>
-      <p id="top-reader">계산 중...</p>
-    </section>
+  <!-- 기존 앱 화면 -->
+  <div id="app-container" style="display:none;">
+    <!-- ... (기존 코드 동일) -->
   </div>
 
   <script src="app.js"></script>
 </body>
-</html>
